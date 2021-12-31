@@ -18,7 +18,7 @@ function App() {
     />
     <dl className="dictionary">
       {emotidex
-        .filter(function (val) {
+        .filter((val)=> {
           if (searchTerm === "") {
             return val;
           } else if (
@@ -30,6 +30,9 @@ function App() {
             val.emoji.includes(searchTerm)
           ) {
             return val;
+          }
+          else{
+            return false; 
           }
         })
         .map((emojiTerm) => (
